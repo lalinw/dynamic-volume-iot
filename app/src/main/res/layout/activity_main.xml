@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/rtt_request_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="248dp"
+        android:backgroundTint="#4A6572"
+        android:onClick="onClick"
+        android:text="STOP"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/rtt_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="248dp"
+        android:backgroundTint="#F9AA33"
+        android:onClick="onClick"
+        android:text="START"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="OnClick" />
+
+    <TextView
+        android:id="@+id/rtt_request_count"
+        android:layout_width="207dp"
+        android:layout_height="23dp"
+        android:text="[Request count: 0]"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rtt_request"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <Switch
+        android:id="@+id/settings_lock"
+        android:layout_width="156dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="20dp"
+        android:checked="true"
+        android:text="SETTINGS LOCK"
+        android:textAlignment="textEnd"
+        android:textOff="LOCKED"
+        android:textOn="UNLOCKED"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rtt_request_count"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/min_volume_prompt"
+        android:layout_width="69dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:text="Volume(%)"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/min_distance_prompt"
+        app:layout_constraintTop_toTopOf="@+id/min_distance_prompt" />
+
+    <TextView
+        android:id="@+id/min_distance_prompt"
+        android:layout_width="97dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:text="Distance(mm)"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/min_distance" />
+
+    <TextView
+        android:id="@+id/min_prompt"
+        android:layout_width="104dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:text="Minimum"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_lock" />
+
+    <TextView
+        android:id="@+id/max_prompt"
+        android:layout_width="104dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="52dp"
+        android:ems="10"
+        android:text="Maximum"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/min_prompt" />
+
+    <EditText
+        android:id="@+id/max_distance"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:enabled="false"
+        android:inputType="number"
+        android:text="5000"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/min_volume"
+        app:layout_constraintTop_toTopOf="@+id/min_volume" />
+
+    <EditText
+        android:id="@+id/min_volume"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="number"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/min_distance"
+        app:layout_constraintTop_toTopOf="@+id/min_distance" />
+
+    <EditText
+        android:id="@+id/min_distance"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:enabled="false"
+        android:inputType="number"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/min_prompt" />
+
+    <EditText
+        android:id="@+id/max_volume"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="number"
+        android:text="100"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/max_distance"
+        app:layout_constraintTop_toTopOf="@+id/max_distance" />
+
+    <TextView
+        android:id="@+id/max_distance_prompt"
+        android:layout_width="96dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:text="Distance(mm)"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/min_volume_prompt"
+        app:layout_constraintTop_toTopOf="@+id/min_volume_prompt" />
+
+    <TextView
+        android:id="@+id/max_volume_prompt"
+        android:layout_width="66dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:text="Volume(%)"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/max_distance_prompt"
+        app:layout_constraintTop_toTopOf="@+id/max_distance_prompt" />
+
+    <TextView
+        android:id="@+id/network_ssid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Network SSID"
+        android:textColor="@color/orange_500"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/network_prompt" />
+
+    <TextView
+        android:id="@+id/rtt_range_prompt"
+        android:layout_width="241dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Range from access point (m):"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/network_ssid" />
+
+    <TextView
+        android:id="@+id/rtt_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="n/a"
+        android:textAlignment="textStart"
+        android:textColor="@color/blue_800"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/rtt_range_prompt"
+        app:layout_constraintTop_toTopOf="@+id/rtt_range_prompt" />
+
+    <TextView
+        android:id="@+id/audio_volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="n/a"
+        android:textAlignment="textStart"
+        android:textColor="@color/blue_800"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/rtt_range"
+        app:layout_constraintTop_toTopOf="@+id/audio_volume_prompt" />
+
+    <TextView
+        android:id="@+id/audio_volume_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Audio source volume (%):"
+        android:textAlignment="textEnd"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/rtt_range_prompt"
+        app:layout_constraintTop_toBottomOf="@+id/rtt_range_prompt" />
+
+    <TextView
+        android:id="@+id/network_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Device is connected to:"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/apply_settings"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
+        android:text="Apply Settings"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_lock" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
